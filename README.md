@@ -1,3 +1,5 @@
+# Don't forget to cite this repo if you are using it or any of its derivatives!
+
 ## Docker Setup
 You can find info about the images used in this repo [here](https://github.com/soham2560/DockerForROS2Development)
 <!-- For Linux -->

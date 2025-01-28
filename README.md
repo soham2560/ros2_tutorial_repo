@@ -1,4 +1,5 @@
 ## Docker Setup
+You can find info about the images used in this repo [here](https://github.com/soham2560/DockerForROS2Development)
 <!-- For Linux -->
 ### For Linux
 - For Linux, run the following commands in the terminal
@@ -45,3 +46,5 @@ docker run -it ubuntu:jammy bash
     - Use `Build WS` button to build workspace
 
 Note: To access these buttons you may need to enable [VSCode Action Button Extension](https://marketplace.visualstudio.com/items?itemName=seunlanlege.action-buttons) through the Extensions Tab in VSCode, the extension should download automatically on container startup
+
+### This work is also inspired by the work of [rahulkatiyar19955](https://www.rahulkatiyar.com/) and some work I did at [MIT Tech Team](https://github.com/mittechteam), head over to his profile if you want to see some more cool robotics work.

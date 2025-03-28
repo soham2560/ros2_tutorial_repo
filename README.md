@@ -1,10 +1,29 @@
-# Don't forget to cite this repo if you are using it or any of its derivatives!
 
-## Docker Setup
-You can find info about the images used in this repo [here](https://github.com/soham2560/DockerForROS2Development)
-<!-- For Linux -->
-### For Linux
-- For Linux, run the following commands in the terminal
+# Dev Container Setup for ROS2 Development
+
+## Acknowledgment
+
+If you are using this repository or any of its derivatives, please  **cite it appropriately** . The Docker images used in this repository originate from [DockerForROS2Development](https://github.com/soham2560/DockerForROS2Development).
+
+## Overview
+
+This repository provides a **VS Code Dev Container** setup for  **ROS2 Humble development** , leveraging Docker to create an isolated, reproducible development environment. It integrates the **Docker images** from [this repo](https://github.com/soham2560/DockerForROS2Development) into a **Dev Container** for seamless development in VS Code.
+
+## Prerequisites
+
+Ensure you have the following installed:
+
+* **Docker** : Follow the steps below to install it.
+* **VS Code** : Download and install from [here](https://code.visualstudio.com/).
+* **Dev Containers Extension** : Install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension in VS Code.
+
+---
+
+## Installation Guide
+
+### Installing Docker (Linux)
+
+Run the following commands in the terminal:
 
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -15,38 +34,65 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 
-### Test your Docker installation
+Verify Docker installation:
 
 ```bash
 docker run hello-world
 ```
 
-### Check Docker version
+### Setting Up the Dev Container
+
+1. **Clone this repository** :
 
 ```bash
-docker --version
+   git clone https://github.com/YOUR_REPO_NAME.git
+   cd YOUR_REPO_NAME
 ```
 
-### Try pulling a public image
+1. **Open in VS Code** :
 
-```bash
-docker pull ubuntu:jammy
+* Open  **VS Code** .
+* Navigate to **File > Open Folder** and select this repository.
 
-docker run -it ubuntu:jammy bash
-```
+1. **Open in Dev Containers** :
 
-## `humble-garden` image
-- To pull latest docker image
-    ```bash
-    docker pull ghcr.io/soham2560/humble-garden:latest
-    ```
-- To start container
-    - Open this repo
-    - Open Command Pallete with `Ctrl+Shift+P`
-    - Select Option to Rebuild and Reopen Container
-    - You can use `Import Libs` button once container has opened to import dependent libs
-    - Use `Build WS` button to build workspace
+* Open the **Command Palette** (`Ctrl+Shift+P`).
+* Search for **"Rebuild and Reopen in Container"** and select it.
+* VS Code will automatically build and open the container.
 
-Note: To access all this you may need to install/enable [VSCode Dev Containers Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [VSCode Action Button Extension](https://marketplace.visualstudio.com/items?itemName=seunlanlege.action-buttons) through the Extensions Tab in VSCode
+1. **Using the Development Tools** :
 
-### This work is also inspired by the work of [rahulkatiyar19955](https://www.rahulkatiyar.com/) and some work I did at [MIT Tech Team](https://github.com/mittechteam), head over to his profile if you want to see some more cool robotics work.
+* Click **Import Libs** to fetch dependencies.
+* Click **Build WS** to compile the ROS2 workspace.
+
+> **Note:** These features require the following VS Code extensions:
+>
+> * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+> * [Action Button](https://marketplace.visualstudio.com/items?itemName=seunlanlege.action-buttons)
+
+---
+
+## Dev Container Configuration
+
+This repository provides the following pre-configured  **Dev Container setup** :
+
+* **`devcontainer.json`** : Defines the VS Code Dev Container environment.
+* **`Dockerfile`** : Builds the container using the **Humble Garden** Docker image.
+* **Preinstalled Extensions** :
+* ROS2 Development Tools
+* Docker Support
+* C++ & Python Development Tools
+* YAML & XML Support
+
+For advanced customization, edit the `devcontainer.json` file.
+
+---
+
+## Credits
+
+This work is built on the Docker images provided by [soham2560/DockerForROS2Development](https://github.com/soham2560/DockerForROS2Development). This repository extends that work by  **integrating it with Dev Containers for a streamlined ROS2 development experience** .
+
+For more information, check out projects from:
+
+* [rahulkatiyar19955](https://www.rahulkatiyar.com/)
+* [MIT Tech Team](https://github.com/mittechteam)

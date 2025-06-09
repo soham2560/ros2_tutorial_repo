@@ -1,38 +1,31 @@
 
-# Dev Container Setup for ROS2 Development
-
-## Acknowledgment
-
-If you are using this repository or any of its derivatives, please  **cite it appropriately** . The Docker images used in this repository originate from [DockerForROS2Development](https://github.com/soham2560/DockerForROS2Development).
+# ROS2 + Docker Development
 
 ## Overview
 
-This repository provides a **VS Code Dev Container** setup for  **ROS2 Humble development** , leveraging Docker to create an isolated, reproducible development environment. It integrates the **Docker images** from [this repo](https://github.com/soham2560/DockerForROS2Development) into a **Dev Container** for seamless development in VS Code.
+This repository provides you template for robotics development cycle using ROS2 and leveraging the capabilities of Docker with VS Code Dev Container. The basis for all the work done here are taken from [DockerForROS2Development](https://github.com/soham2560/DockerForROS2Development).
 
 ## Prerequisites
 
-Ensure you have the following installed:
+- Ubuntu 22.04 or 24.04
+- VSCode
+- Remote Development Extension by Microsoft (Inside VSCode)
+- **Docker Installation**
+  ```bash
+  # Install Docker using convenience script
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh ./get-docker.sh
 
-* **Docker** : Follow the steps below to install it.
-* **VS Code** : Download and install from [here](https://code.visualstudio.com/).
-* **Dev Containers Extension** : Install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension in VS Code.
+  # Post-install configuration
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
+  sudo systemctl enable docker.service
+  sudo systemctl enable containerd.service
 
----
-
-## Installation Guide
-
-### Installing Docker (Linux)
-
-Run the following commands in the terminal:
-
-```bash
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-```
+  # Verify installation
+  sudo systemctl is-enabled docker
+  ```
+- **Reboot before proceeding further**
 
 Verify Docker installation:
 
@@ -42,35 +35,35 @@ docker run hello-world
 
 ### Setting Up the Dev Container
 
-1. **Clone this repository** :
+- **Clone this repository** :
 
-```bash
-   git clone https://github.com/YOUR_REPO_NAME.git
-   cd YOUR_REPO_NAME
-```
+    ```bash
+    mkdir ros2_ws && cd ros2_ws
+    # Clone the repo
+    https://github.com/soham2560/ros2_tutorial_repo .
+    # Open VSCode 
+    code .
+    ```
 
-1. **Open in VS Code** :
+- **To enter the container**
+    - Open Command Pallete with `Ctrl+Shift+P`
+    - Select **Dev Containers: Rebuild and Reopen in Container**
 
-* Open  **VS Code** .
-* Navigate to **File > Open Folder** and select this repository.
 
-1. **Open in Dev Containers** :
+## Working with ROS
 
-* Open the **Command Palette** (`Ctrl+Shift+P`).
-* Search for **"Rebuild and Reopen in Container"** and select it.
-* VS Code will automatically build and open the container.
+- **Open two Terminals**
+- **Check ROS Humble Installation**
+  ```bash
+  # In one Terminal
+  ros2 run demo_nodes_cpp talker
+  ```
 
-1. **Using the Development Tools** :
-
-* Click **Import Libs** to fetch dependencies.
-* Click **Build WS** to compile the ROS2 workspace.
-
-> **Note:** These features require the following VS Code extensions:
->
-> * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-> * [Action Button](https://marketplace.visualstudio.com/items?itemName=seunlanlege.action-buttons)
-
----
+  ```bash
+  #In another Terminal
+  ros2 run demo_nodes_py listener
+  ```
+- You should see communication between the nodes if everything is working correctly.
 
 ## Dev Container Configuration
 
@@ -86,7 +79,6 @@ This repository provides the following pre-configured  **Dev Container setup** :
 
 For advanced customization, edit the `devcontainer.json` file.
 
----
 
 ## Credits
 

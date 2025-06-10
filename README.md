@@ -63,7 +63,7 @@ docker run hello-world
   ```
 
   ```bash
-  #In another Terminal
+  # In another Terminal
   ros2 run demo_nodes_py listener
   ```
 - You should see communication between the nodes if everything is working correctly.

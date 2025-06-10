@@ -85,7 +85,7 @@ For advanced customization, edit the `devcontainer.json` file.
 
 ## Credits
 
-This work is built on the Docker images provided by [soham2560/DockerForROS2Development](https://github.com/soham2560/DockerForROS2Development). This repository extends that work by  **integrating it with Dev Containers for a streamlined ROS2 development experience** .
+This work is built on the Docker images provided by [soham2560/DockerForROS2Development](https://github.com/soham2560/DockerForROS2Development). This repository extends that work by  **integrating it with Dev Containers for a streamlined ROS2 development experience**.
 
 For more information, check out projects from:
 

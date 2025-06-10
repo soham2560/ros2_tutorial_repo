@@ -11,35 +11,35 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "actionButtons": {
-                    "defaultColor": "#ff0034", // Can also use string color names.
-                    "loadNpmCommands": false, // Disables automatic generation of actions for npm commands.
-                    "reloadButton": "♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
-                    "commands": [
-                        {
-                            "name": "Build WS",
-                            "cwd": "/ros2_ws",
-                            "color": "green",
-                            "singleInstance": true,
-                            "command": "colcon build --symlink-install" // This is executed in the terminal.
-                        },
-                        {
-                            "name": "$(testing-run-all-icon) Test WS",
-                            "cwd": "/ros2_ws",
-                            "color": "orange",
-                            "singleInstance": true,
-                            "command": "colcon test --event-handlers console_direct+"
-                        },
-                        {
-                            "name": "$(extensions-install-count) Import Libs",
-                            "cwd": "/ros2_ws",
-                            "color": "aqua",
-                            "singleInstance": true,
-                            "command": "rm -rf /ros2_ws/src/dep_repos && mkdir -p /ros2_ws/src/dep_repos && vcs import /ros2_ws/src/dep_repos < /ros2_ws/src/dep.repos"
-                        }
-                    ]
-                }
-            },
+            "actionButtons": {
+                "defaultColor": "#ff0034", // Can also use string color names.
+                "loadNpmCommands": false, // Disables automatic generation of actions for npm commands.
+                "reloadButton": "♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
+                "commands": [
+                    {
+                        "name": "Build WS",
+                        "cwd": "/ros2_ws",
+                        "color": "green",
+                        "singleInstance": true,
+                        "command": "colcon build --symlink-install" // This is executed in the terminal.
+                    },
+                    {
+                        "name": "$(testing-run-all-icon) Test WS",
+                        "cwd": "/ros2_ws",
+                        "color": "orange",
+                        "singleInstance": true,
+                        "command": "colcon test --event-handlers console_direct+"
+                    },
+                    {
+                        "name": "$(extensions-install-count) Import Libs",
+                        "cwd": "/ros2_ws",
+                        "color": "aqua",
+                        "singleInstance": true,
+                        "command": "rm -rf /ros2_ws/src/dep_repos && mkdir -p /ros2_ws/src/dep_repos && vcs import /ros2_ws/src/dep_repos < /ros2_ws/src/dep.repos"
+                    }
+                ]
+            }
+        },
             "extensions":[
 				"althack.ament-task-provider",
 				"betwo.b2-catkin-tools",

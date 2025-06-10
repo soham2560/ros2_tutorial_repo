@@ -2,14 +2,14 @@
 # ROS2 + Docker + VSCode Dev Containers
 
 ## Overview
-
-This repository provides you template for robotics development cycle using ROS2 and leveraging the capabilities of Docker with VS Code Dev Container. The basis for all the work done here are taken from [DockerForROS2Development](https://github.com/soham2560/DockerForROS2Development).
+This repository provides a **VS Code Dev Container** setup for  **ROS2 Humble development** , leveraging Docker to create an isolated, reproducible development environment. It integrates the **Docker images** from [DockerForROS2Development](https://github.com/soham2560/DockerForROS2Development) repo into a **Dev Container** for seamless development in VS Code.
 
 ## Prerequisites
 
-- Ubuntu 22.04 or 24.04
-- VSCode
-- Remote Development Extension by Microsoft (Inside VSCode)
+* **Ubuntu** (preferred)
+* **VS Code** : Download and install from [here](https://code.visualstudio.com/download).
+* **Dev Containers Extension** : Install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension in VS Code.
+
 - **Docker Installation**
   ```bash
   # Install Docker using convenience script
@@ -19,11 +19,6 @@ This repository provides you template for robotics development cycle using ROS2 
   # Post-install configuration
   sudo groupadd docker
   sudo usermod -aG docker $USER
-  sudo systemctl enable docker.service
-  sudo systemctl enable containerd.service
-
-  # Verify installation
-  sudo systemctl is-enabled docker
   ```
 - **Reboot before proceeding further**
 
@@ -38,16 +33,24 @@ docker run hello-world
 - **Clone this repository** :
 
     ```bash
-    mkdir ros2_ws && cd ros2_ws
-    # Clone the repo
-    https://github.com/soham2560/ros2_tutorial_repo .
-    # Open VSCode 
+    https://github.com/soham2560/ros2_tutorial_repo 
+    # Navigate to ros2_tutorial_repo directory and open VSCode 
     code .
     ```
 
 - **To enter the container**
-    - Open Command Pallete with `Ctrl+Shift+P`
-    - Select **Dev Containers: Rebuild and Reopen in Container**
+  * Open the **Command Palette** (`Ctrl+Shift+P`).
+  * Search for **"Rebuild and Reopen in Container"** and select it.
+  * VS Code will automatically build and open the container.
+
+* **Using the Development Tools** :
+
+  * Click **Import Libs** to fetch dependencies.
+  * Click **Build WS** to compile the ROS2 workspace.
+
+> **Note:** These features require the following VS Code extensions:
+> * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+> * [Action Button](https://marketplace.visualstudio.com/items?itemName=seunlanlege.action-buttons)
 
 
 ## Working with ROS
